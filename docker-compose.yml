@@ -8,10 +8,10 @@ services:
       - ./Mysql/fundme.sql:/docker-entrypoint-initdb.d/init.sql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${mysql_root_PASSWD}
-      MYSQL_DATABASE: fundme
-      MYSQL_USER: fundme
-      MYSQL_PASSWORD: ${mysql_PASSWD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
      - 3306:3306
   web:
@@ -27,6 +27,11 @@ services:
     image: civisblockchain/php-mysql:0.1.0
     volumes:
       - ./Script:/fund-impact
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USERNAME: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
 volumes:
   db_data: {}
