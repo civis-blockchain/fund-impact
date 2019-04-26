@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./Mysql/fundme.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql_root_PASSWD}
+      MYSQL_DATABASE: fundme
+      MYSQL_USER: fundme
+      MYSQL_PASSWORD: ${mysql_PASSWD}
+    ports:
+     - 3306:3306
+volumes:
+  db_data: {}
