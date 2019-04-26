@@ -1,5 +1,18 @@
 # Fund-impact
 
+
+* Install docker-compose
+```
+apt-get udate
+apt-get install docker-compose
+```
+* Clone repo
+
+```
+git clone https://github.com/civis-blockchain/fund-impact.git
+cd fund-impact
+```
+
 * Configuration
 ```
 echo MYSQL_HOST=db  >> .env
