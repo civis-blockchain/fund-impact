@@ -1,5 +1,5 @@
 VERSION	:= 0.1.0
-PHP_MYSQL_NAME := civisblockchain/php-mysql
+PHP_MYSQL_NAME := civisblockchain/fund-impact-php
 PHP_MYSQL_IMG := ${PHP_MYSQL_NAME}:${VERSION}
 PHP_MYSQL_IMG_LATEST := ${PHP_MYSQL_NAME}:latest
 

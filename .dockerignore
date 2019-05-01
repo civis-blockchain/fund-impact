@@ -1,0 +1,14 @@
+# comment
+Script/node_modules
+Script/public/hot
+Script/public/storage
+Script/storage/*.key
+Script/vendor
+Script/.idea
+Script/.vscode
+Script/.vagrant
+Script/Homestead.json
+Script/Homestead.yaml
+Script/npm-debug.log
+Script/yarn-error.log
+Script/.phpunit.result.cache

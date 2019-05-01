@@ -24,9 +24,7 @@ services:
     links:
       - php
   php:
-    image: civisblockchain/php-mysql:0.1.0
-    volumes:
-      - ./Script:/fund-impact
+    image: civisblockchain/fund-impact-php:0.1.0
     environment:
       MYSQL_HOST: ${MYSQL_HOST}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
