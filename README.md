@@ -23,7 +23,7 @@ echo MYSQL_PASSWORD=$(cat /dev/urandom | xxd | head -n 1 | cut -b 10-49 | sed "s
 
  * Start
 ```
-docker-compose up -d
+docker-compose -f docker-compose-prod.yml up -d
 ```
 
 http://localhost:7000

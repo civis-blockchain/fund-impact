@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - /opt/mysql/data:/var/lib/mysql
+      - ./Mysql/fundme.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+     - 3306:3306
+  web:
+    image: nginx:latest
+    ports:
+      - "7000:80"
+    volumes:
+      - ./Script:/fund-impact
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
+  php:
+    image: civisblockchain/fund-impact-php:0.1.0
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USERNAME: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+volumes:
+  db_data: {}
