@@ -15,7 +15,7 @@ services:
     ports:
      - 3306:3306
   php:
-    image: civisblockchain/fund-impact-php:0.1.1
+    image: civisblockchain/fund-impact-php:latest
     volumes:
       - site_data:/fund-impact
       - /opt/fund-impact/public:/fund-impact/public

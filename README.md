@@ -38,3 +38,13 @@ docker-compose stop
 docker-compose down -v
 ```
 
+
+## Release
+
+```
+VERSION=0.1.2
+git tag $VERSION
+git checkout ${VERSION}
+make build push tag-latest -e VERSION=${VERSION}
+git push origin ${VERSION}
+```
